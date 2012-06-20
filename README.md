@@ -119,6 +119,11 @@ If the keys match, it will return True, otherwise it will return false
 ## reCAPTCHA
 The recaptcha driver is based on the recaptcha package here: [https://github.com/pwrhead/fuel-recaptcha](https://github.com/pwrhead/fuel-recaptcha)
 
+### Basic Configuration
+The config file for reCAPTCHA can be found at `config/recaptcha.php`
+
+You will need to add your private and public api keys here
+
 ### Html
 #### Captcha::forge('recaptcha')->html($view = null, $error = null, $use_ssl = false);
 This will return a html object with the reCAPTCHA html block.
