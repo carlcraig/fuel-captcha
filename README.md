@@ -53,7 +53,7 @@ This currently works with the Simplecaptcha Driver
 Returns a html block for the given driver. In general the html block will contain the captcha image code and an input field.
 
 ## Simplecaptcha
-Simplecaptcha is a lightweight captcha driver.
+Simplecaptcha is our lightweight captcha class written for this package
 
 ### Basic Configuration
 The config file for Simplecaptcha can be found at `config/simplecaptcha.php`
@@ -101,6 +101,10 @@ You can also pass the captcha_route variable in the $config array
 $config = array( 'captcha_route' => 'url for image()' );
 Captcha::forge('simplecaptcha')->html($config);
 ```
+Should you want to change the default view that is loaded, alter the default_view variable in the config
+```php
+'default_view' => 'simplecaptcha/default',
+```
 
 ### Check
 #### Captcha::forge('simplecaptcha')->check($key = null);
@@ -110,5 +114,38 @@ If __$key__ is left null, the function will try to get the entered key from the 
 'session_key_name' => 'simplecaptcha',
 'post_key_name' => 'simplecaptcha',
 ```
+If the keys match, it will return True, otherwise it will return false
 
+## reCAPTCHA
+The recaptcha driver is based on the recaptcha package here: [https://github.com/pwrhead/fuel-recaptcha](https://github.com/pwrhead/fuel-recaptcha)
+
+### Html
+#### Captcha::forge('recaptcha')->html($view = null, $error = null, $use_ssl = false);
+This will return a html object with the reCAPTCHA html block.
+By default it will load the view `views/recaptcha/default.php`
+You can set $view to a different view whilst calling html()
+```php
+Captcha::forge('recaptcha')->html('recaptcha/custom');
+```
+You can also add the $error variable, with any error messages the reCAPTCHA html block needs to display
+Finally you can set $use_ssl to true should you wish to enable ssl.
+Should you want to change the default view that is loaded, alter the default_view variable in the config
+```php
+'default_view' => 'simplecaptcha/default',
+```
+
+### Check
+#### Captcha::forge('recaptcha')->check($remote_ip = null, $challenge = null, $response = null, $extra_params = array());
+This will check if the key entered by the user is correct.
+```php
+Captcha::forge('recaptcha')->check();
+```
+Will return True or False dependant on the keys being a match
+By default the function will find the $remote_ip, $challenge, $response and $extra_params,
+But you can enter them when you call check() if needed.
+If left null, the $challenge and $response will be taken from the Input POST using the names specified in the config file
+```php
+'challenge_field' => 'recaptcha_challenge_field',
+'response_field' => 'recaptcha_response_field',
+```
 
