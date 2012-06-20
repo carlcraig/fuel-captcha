@@ -75,6 +75,7 @@ This string will be used to salt captcha keys before storing them in the session
 
 #### Styling the Simplecaptcha Image
 In the config file there are many different ways to style the captcha image, each config variable is documented in the comments.
+- (detailed docs here soon) - 
 
 ### Image
 #### Captcha::forge('simplecaptcha')->image($config = array());
