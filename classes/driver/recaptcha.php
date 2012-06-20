@@ -165,13 +165,11 @@ class Driver_Recaptcha
 		{
 			$error = $this->error;
 		}
-		
 		$error_part = '';
-        if ($error)
-        {
-        	$error_part = '&amp;error='.$error;
+		if ($error)
+		{
+			$error_part = '&amp;error='.$error;
 		}
-		
 		if (is_null($view))
 		{
 			$view = $this->config['default_view'];
@@ -182,7 +180,6 @@ class Driver_Recaptcha
 		$data['public_key'] = $this->config['public_key'];
 		$data['error_part'] = $error_part;
 		$data['error'] = $error;
-		
 		return \View::forge($view, $data);
 	}
 
