@@ -56,6 +56,14 @@ return array(
  * e.g. \Uri::create('captcha/index')
  */	
 	'captcha_route' => false,
+
+/** Default View
+ * 
+ * (string)
+ * 
+ * The default view to load
+ */	
+	'default_view' => 'simplecaptcha/default',
  
 /** Captcha Length
  *

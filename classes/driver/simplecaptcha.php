@@ -246,7 +246,7 @@ class Driver_Simplecaptcha
 		if($this->config['captcha_route'] or isset($config['captcha_route']))
 		{
 			$data = array();
-			$view = 'simplecaptcha/default';
+			$view = $this->config['default_view'];
 			if (! is_null($config))
 			{
 				$data = (array) $config;
