@@ -12,6 +12,8 @@ A driver based captcha package for FuelPHP
 
 Download the package and extract it into `fuel/packages/captcha/`
 
+You must then either add it to __always_load__ in `app/config/config.php` or use `Package::load('captcha')`.
+
 ## Basic Configuration
 The Captcha config file is located at
 `config/captcha.php`
