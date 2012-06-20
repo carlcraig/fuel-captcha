@@ -261,7 +261,14 @@ class Driver_Simplecaptcha
 			{
 				$data['captcha_height'] += $this->config['message_height'];
 			}
-			$data['captcha_route'] = ($this->config['captcha_route']) ? $this->config['captcha_route'] : $config['captcha_route'];
+			if (isset($config['captcha_route']))
+			{
+				$data['captcha_route'] = $config['captcha_route'];
+			}
+			else
+			{
+				$data['captcha_route'] = $this->config['captcha_route'];
+			}
 			$data['captcha_post_name'] = $this->config['post_key_name'];
 			$html = \View::forge($view, $data);
 			return $html;
