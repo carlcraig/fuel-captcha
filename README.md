@@ -144,6 +144,7 @@ Should you want to change the default view that is loaded, alter the default_vie
 
 ### Check
 #### Captcha::forge('recaptcha')->check($remote_ip = null, $challenge = null, $response = null, $extra_params = array());
+
 This will check if the key entered by the user is correct.
 ```php
 Captcha::forge('recaptcha')->check();
