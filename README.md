@@ -74,8 +74,8 @@ You will want to replace the salt with a new random hash.
 This string will be used to salt captcha keys before storing them in the session.
 
 #### Styling the Simplecaptcha Image
-In the config file there are many different ways to style the captcha image, each config variable is documented in the comments.
-(detailed config docs to be added soon). 
+In the config file there are many different ways to style the captcha generated image.
+Each config variable is well documented in the comments and it's really easy to tweak
 
 ### Image
 #### Captcha::forge('simplecaptcha')->image($config = array());
