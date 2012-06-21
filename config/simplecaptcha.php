@@ -376,6 +376,8 @@ return array(
  * (array)
  * 
  * List of symbols that should not be used
+ *(removing vowels helps prevent normal words from being generated)
+ *
  */	
 	'symbol_blacklist' => array('0','1','a','e','f','i','j','l','m','o','r','u','w','=','-','+','*','/','?'),	
 );
