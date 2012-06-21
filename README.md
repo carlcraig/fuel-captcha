@@ -15,21 +15,30 @@ Download the package and extract it into `fuel/packages/captcha/`
 You must then either add it to __always_load__ in `app/config/config.php` or use `Package::load('captcha')`.
 
 ## Basic Configuration
+
 The Captcha config file is located at
+
 `config/captcha.php`
+
 #### driver_list
+
 An array of drivers
+
 ```php
   'driver_list' => array(
 		'simplecaptcha' => 'Driver_Simplecaptcha',
 		'recaptcha' => 'Driver_Recaptcha',
 	),
 ```
+
 #### driver_default
+
 The default driver to load
 
 ## Drivers
+
 By default there are two drivers for the Captcha Package
+
 * Simplecaptcha
 * reCAPTCHA
 
