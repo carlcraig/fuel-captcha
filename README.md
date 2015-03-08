@@ -1,3 +1,10 @@
+Notice
+======
+
+This project is no longer maintained.
+
+------------------------------
+
 # Fuel Captcha Package
 
 A driver based captcha package for FuelPHP
